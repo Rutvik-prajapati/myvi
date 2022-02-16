@@ -1,0 +1,173 @@
+<app-header></app-header>
+<app-navbar></app-navbar>
+<div style="background-color: #fcfcfc;">
+<div class="row m-5">
+    <div class="tab-pane fade show active col-8" id="selected-plan" role="tabpanel" aria-labelledby="unlimited-tab">
+        <p class="planType pt-2"> selected pack </p>
+        <div class="card border-dark m-3"> 
+            <div class="card-body d-flex  justify-content-around" *ngIf="planDetail != null"> 
+                <div class="planPrice text-center"> 
+                    <h5 class="card-title"> ₹{{planDetail.price}}</h5>
+                </div>
+                <div class="card-text row">
+                      <p class="col" *ngIf="planDetail.call != null">{{planDetail.call}}Call</p>
+                      <p class="col" *ngIf="planDetail.data != null">{{planDetail.data}} Data</p>
+                      <p class="col" *ngIf="planDetail.talktime > 0">{{planDetail.talktime}} Talktime</p>
+                      <p class="col" *ngIf="planDetail.validity > 0">{{planDetail.validity}} Validity</p>
+                      <p class="col" *ngIf="planDetail.sms != null">{{planDetail.sms}}</p>
+                </div>
+            </div>
+        </div>
+        <form [formGroup]="userDetailForm" (ngSubmit)="OnSubmit()">
+            <div id="register-data" >
+                <div class="form-group mb-3 p-5 shadow rounded-3" style="background-color: #FFFFFF;">
+                    <div *ngIf="type=='vip' || type=='port'">
+                        <h5 *ngIf="type=='vip'" class="head mb-3">enter basic details to select a VIP fancy number</h5>
+                        <h5 *ngIf="type=='port'" class="head mb-3">enter basic details to port mobile number online</h5>
+                    
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" [disabled]="simTypeName!='prepaid'" [checked]="simTypeName=='prepaid'">
+                            <label class="form-check-label" for="inlineRadio1">Prepaid</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" [disabled]="simTypeName!='postpaid'" [checked]="simTypeName=='postpaid'">
+                            <label class="form-check-label" for="inlineRadio2">Postpaid</label>
+                        </div>
+                    </div>
+                    <div class="mt-2 row">
+                        <h5 class="head" *ngIf="type==null">1.contact details</h5>
+                        <div class="col-6">
+                            <label for="phone">Alter Mobile Number</label>
+                            <input formControlName="alterMobileNumber" placeholder="alter mobile number" type="text" class="form-control" id="phone">
+                            <span class="help-block" *ngIf="!userDetailForm.get('alterMobileNumber').valid && userDetailForm.get('alterMobileNumber').touched">
+                                <div class="vError" *ngIf="userDetailForm.get('alterMobileNumber').errors['required']">*mobile number required</div>
+                                <div class="vError" *ngIf="userDetailForm.get('alterMobileNumber').errors['pattern']">Mobile number should be valid</div>
+                            </span>
+                            <p>This gives consent to Vi partners to contact you</p>
+                        </div>
+                        <div class="col-6" *ngIf="type=='port'">
+                            <label for="phone">Enter number you wish to port</label>
+                            <input formControlName="portMobileNumber" placeholder="enter port mobile number" type="text" class="form-control" id="phone">
+                            <span class="help-block" *ngIf="!userDetailForm.get('portMobileNumber').valid && userDetailForm.get('portMobileNumber').touched">
+                                <div class="vError" *ngIf="userDetailForm.get('portMobileNumber').errors['required']">*mobile number required</div>
+                                <div class="vError" *ngIf="userDetailForm.get('portMobileNumber').errors['pattern']">Mobile number should be valid</div>
+                            </span>
+                            <div class="vError">{{test}}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group mb-3 p-5 shadow rounded-3" *ngIf="type=='vip'" style="background-color: #FFFFFF;">
+                    <h5 class="head">select VIP fancy number</h5>
+                    <select class="form-select mt-3" aria-label="Default select example" name="select" id="" formControlName="selectedVIPNumId">
+                        <option selected>select number</option>
+                        <option *ngFor="let item of vipNumberList" value="{{item.id}}">{{item.vipNumber}}</option>
+                    </select>
+                    <span class="help-block" *ngIf="!userDetailForm.get('selectedVIPNumId').valid && userDetailForm.get('selectedVIPNumId').touched">
+                        <!-- <div class="vError" *ngIf="userDetailForm.get('selectedVIPNumId').errors['minlength']">Please enter minimum 1 character</div> -->
+                        <div class="vError" *ngIf="userDetailForm.get('selectedVIPNumId').errors['required']">*select any one vip number</div>
+                        <!-- <div class="vError" *ngIf="userDetailForm.get('selectedVIPNumId').errors['pattern']">Flat No. is not valid</div> -->
+                    </span>
+                </div>
+                
+                <div class="form-group mb-3 p-5 shadow rounded-3" style="background-color: #FFFFFF;">
+                    <h5 class="head" *ngIf="type==null">2.delivery address</h5>
+                    <h5 class="head" *ngIf="type=='vip' || type=='port'">enter address to place order</h5>
+                    <p>enter your SIM delivery address</p>
+                    <div class="row">
+                        <div class="col-4">
+                            <label for="flatno">Flat/House No.</label>
+                            <input formControlName="flatNo" placeholder="flat/house no." type="text" class="form-control" id="flatno">
+                            <span class="help-block" *ngIf="!userDetailForm.get('flatNo').valid && userDetailForm.get('flatNo').touched">
+                                <div class="vError" *ngIf="userDetailForm.get('flatNo').errors['minlength']">Please enter minimum 1 character</div>
+                                <div class="vError" *ngIf="userDetailForm.get('flatNo').errors['required']">*flatNo required</div>
+                                <div class="vError" *ngIf="userDetailForm.get('flatNo').errors['pattern']">Flat No. is not valid</div>
+                            </span>
+                        </div>
+                        <div class="col-4">
+                            <label for="city">City</label>
+                            <input formControlName="city" placeholder="city" type="text" class="form-control" id="city">
+                            <span class="help-block" *ngIf="!userDetailForm.get('city').valid && userDetailForm.get('city').touched">
+                                <div class="vError" *ngIf="userDetailForm.get('city').errors['minlength']">Please enter minimum 3 character</div>
+                                <div class="vError" *ngIf="userDetailForm.get('city').errors['required']">*city required</div>
+                                <div class="vError" *ngIf="userDetailForm.get('city').errors['pattern']">City name is not valid</div>
+                            </span>
+                        </div>
+                        <div class="col-4">
+                            <label for="state">State</label>
+                            <input formControlName="state" placeholder="state" type="text" class="form-control" id="state">
+                            <span class="help-block" *ngIf="!userDetailForm.get('state').valid && userDetailForm.get('state').touched">
+                                <div class="vError" *ngIf="userDetailForm.get('state').errors['minlength']">Please enter minimum 3 character</div>
+                                <div class="vError" *ngIf="userDetailForm.get('state').errors['required']">*state required</div>
+                                <div class="vError" *ngIf="userDetailForm.get('state').errors['pattern']">State name is not valid</div>
+                            </span>
+                        </div>
+                        <div class="col">
+                            <label for="country">Country</label>
+                            <input formControlName="country" placeholder="country" type="text" class="form-control" id="country">
+                            <span class="help-block" *ngIf="!userDetailForm.get('country').valid && userDetailForm.get('country').touched">
+                                <div class="vError" *ngIf="userDetailForm.get('country').errors['minlength']">Please enter minimum 3 character</div>
+                                <div class="vError" *ngIf="userDetailForm.get('country').errors['required']">*country required</div>
+                                <div class="vError" *ngIf="userDetailForm.get('country').errors['pattern']">Country name is not valid</div>
+                            </span>
+                        </div>
+                        <div class="col">
+                            <label for="pincode">Pincode Number</label>
+                            <input formControlName="pincodeNo" placeholder="pincode" type="text" class="form-control" id="pincode">
+                            <span class="help-block" *ngIf="!userDetailForm.get('pincodeNo').valid && userDetailForm.get('pincodeNo').touched">
+                                <div class="vError" *ngIf="userDetailForm.get('pincodeNo').errors['minlength']">Please enter minimum 6 number</div>
+                                <div class="vError" *ngIf="userDetailForm.get('pincodeNo').errors['maxlength']">Please enter maximum 6 number</div>
+                                <div class="vError" *ngIf="userDetailForm.get('pincodeNo').errors['required']">*pincode required</div>
+                                <div class="vError" *ngIf="userDetailForm.get('pincodeNo').errors['pattern']">Pincode is not valid</div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <button type="submit" id="sendOtpBtn" [disabled]="!userDetailForm.valid" style="float: right;"
+                 class="btn rounded-pill bg-secondary text-white sendotpBtn px-4 miDarkbtn"
+                 data-bs-toggle="modal" data-bs-target="#exampleModal">place order</button>
+
+
+             <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                        Successfully place order
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" (click)="navigate()" class="btn rounded-pill bg-secondary text-white sendotpBtn px-4 miDarkbtn" data-bs-dismiss="modal">Ok</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+  
+        </form>
+    </div>
+
+    <div class="col-4">
+        <div class="row">
+            <img class="col-2" src="../../../../assets/img/neogold/rt-sim.svg" alt=""><br>
+            <h5 class="head col-10">join Vi<sup>TM</sup> <br> in 3 simple steps</h5>
+        </div><br>
+        <div class="row">
+            <img class="col-2" src="../../../../assets/img/neogold/first-step.svg" alt=""><br>
+            <p class="col-10">Submit this form</p>
+        </div><br>
+        <div class="row">
+            <img class="col-2" src="../../../../assets/img/neogold/thrd-step.svg" alt=""><br>
+            <p class="col-10">new SIM gets home delivered</p>
+        </div><br>
+        <div class="row">
+            <img class="col-2" src="../../../../assets/img/neogold/step3New.svg" alt=""><br>
+            <p class="col-10">call 59059 to activate SIM</p>
+        </div>
+    </div>
+</div>
+
+</div>
+    
+
+<app-footer></app-footer>

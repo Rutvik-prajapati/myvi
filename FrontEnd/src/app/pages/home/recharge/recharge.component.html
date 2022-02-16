@@ -1,0 +1,28 @@
+<form class="px-5 mx-3" [formGroup]="rechargeForm" (ngSubmit)="OnSubmit()">
+    <h1 class="vi_head">
+      recharge and pay bill <p>for exciting offers</p>
+    </h1>
+    <div class="vi_radio mt-4 d-flex flex-row">
+      <div class="form-check px-3">
+        <label class="form-check-label">
+          <input class="form-check-input" formControlName="rechargeType" [checked]="true" type="radio" value="prepaid">
+          Prepaid
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label px-3">
+          <input class="form-check-input" formControlName="rechargeType" type="radio" value="postpaid">
+          Postpaid
+        </label>
+      </div>
+    </div>
+    <div class="rounded-pill border input-group mt-3 px-1" id="recharge" style="width:400px;height: 56px;">
+      <input *ngIf="check()" formControlName="phoneNumber" type="text" class="form-control" id="vi_mobileNo" maxlength="10" autocomplete="off"
+        placeholder="Enter mobile number">
+      <button type="submit" class="rounded-pill input-group-append btn btn-dark text-white m-auto" id="recharge_btn">recharge</button>
+    </div>
+
+    <p class="nonvilink mt-3">not a Vi user? <a class="text-dark"
+      [routerLink]="['new-connection','prepaid']" >get Vi SIM</a> delivered
+      free</p>
+</form>

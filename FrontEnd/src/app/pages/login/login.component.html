@@ -1,0 +1,53 @@
+<app-header></app-header>
+<app-navbar></app-navbar>
+<!-- <div class="container"> -->
+    <div class="row">
+        <div class="col-md-6">
+            <img src="../../assets/img/signInImg/mainImg.png" alt="">
+        </div>
+        <div class="col-md-6">
+            <div class="loginform">
+                <h1 class="loginheading">sign in to Vi</h1>
+                <h2 class="loginSubheading">Manage your Account</h2>
+                <div class="enterMobileSection">
+                    <form [formGroup]="signInForm" (ngSubmit)="OnSubmit()">
+                        <div id="student-data" formGroupName="signInData" >
+                            <div class="form-group mb-3">
+                                <label for="username">Username</label>
+                                <input formControlName="userName" placeholder="username" type="text" class="form-control" id="username">
+                                
+                                <span class="help-block" *ngIf="!signInForm.get('signInData.userName').valid && signInForm.get('signInData.userName').touched">
+                                    <div class="vError" *ngIf="signInForm.get('signInData.userName').errors['minlength']">Please enter minimum 3 character</div>
+                                    <div class="vError" *ngIf="signInForm.get('signInData.userName').errors['required']">This field is required</div>
+                                    <div class="vError" *ngIf="signInForm.get('signInData.userName').errors['pattern']">Firstname is not valid</div>
+                                </span>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="password">Password</label>
+                                <input formControlName="password" placeholder="password" type="password" class="form-control" id="password">
+                                <span class="help-block" *ngIf="!signInForm.get('signInData.password').valid && signInForm.get('signInData.password').touched">
+                                    <div class="vError" *ngIf="signInForm.get('signInData.password').errors['minlength']">Please enter minimum 8 character</div>
+                                    <div class="vError" *ngIf="signInForm.get('signInData.password').errors['required']">This field is required</div>
+                                    <div class="vError" *ngIf="signInForm.get('signInData.password').errors['pattern']">Password is not valid</div>
+                                </span>
+                            </div>
+                        </div>
+                       
+                        <button type="submit" id="sendOtpBtn" [disabled]="!signInForm.valid"
+                    class="btn rounded-pill bg-secondary text-white sendotpBtn px-4 miDarkbtn">Sign in</button>
+
+                    </form>
+                    <!-- <label class="" for="mobile">enter your mobile number</label>
+                    <input type="text" maxlength="10" class="form-control" id="mobile"
+                        placeholder="enter your mobile number" name="number" autocomplete="off">-->
+
+                    <p class="vError" style="display:block!important;" id="errorMsg">{{errorMessage}}</p> 
+                </div>
+                    <button class="btn btn-block border-none bg-light text-primary my-2" type="submit" (click)='registerUser()'>
+                        You don't have an Account
+                    </button>
+            </div>
+        </div>
+    </div>
+<!-- </div> -->
+<app-footer></app-footer>

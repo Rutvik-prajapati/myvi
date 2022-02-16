@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+    <defs>
+        <path id="csmpc2tzga" d="M8.421 0c4.007.01 7.282 3.262 7.409 7.3l.003.242c0 .55-.436.995-.977 1l.003-.243c0 4.155-3.333 7.534-7.43 7.534C3.333 15.833 0 12.453 0 8.3 0 4.141 3.333.757 7.43.757l.032.002C7.568.323 7.956 0 8.419 0h.002zm-.988 2.756h-.004c-3.009 0-5.458 2.487-5.458 5.543 0 3.052 2.449 5.536 5.458 5.536 2.93 0 5.327-2.354 5.453-5.293H8.419c-.545 0-.993-.447-.993-1 0-.041.002-.082.007-.122V2.756zm1.972-.663l-.001 4.45h4.37c-.406-2.25-2.156-4.031-4.369-4.45z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g transform="translate(-1192.000000, -133.000000) translate(1176.000000, 123.000000) translate(16.000000, 10.000000) translate(2.500000, 2.500000)">
+                        <mask id="jl6nfnghqb" fill="#fff">
+                            <use xlink:href="#csmpc2tzga"/>
+                        </mask>
+                        <use fill="#FA002D" xlink:href="#csmpc2tzga"/>
+                        <g fill="#2F3042" mask="url(#jl6nfnghqb)">
+                            <path d="M0 0H20V20H0z" transform="translate(-3.333333, -1.666667)"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

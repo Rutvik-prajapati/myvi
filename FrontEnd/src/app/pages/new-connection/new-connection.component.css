@@ -1,0 +1,27 @@
+li a {
+    font-size: 16px;
+    line-height: 16px;
+    padding: 20px 0 34px 0;
+    min-width: 190px;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+    border: 0;
+    transition: all .2s linear;
+    color: #c9c9d1;
+    font-family: "Vi-Bold","Helvetica","Arial",sans-serif;
+    background-color: transparent;
+    text-transform: lowercase;
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: #495057;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+} 
+
+.sticky-topPlan {
+    position: sticky;
+    top: 60px;
+    z-index: 1;
+    background-color:#fff;
+}

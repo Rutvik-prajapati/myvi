@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="42" height="42" viewBox="0 0 42 42">
+    <defs>
+        <circle id="lxrsuticgb" cx="19.167" cy="19.167" r="19.167"/>
+        <rect id="nt1z769qna" width="40" height="40" x="0" y="0" rx="20"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g>
+                        <g transform="translate(-477 -1054) translate(208 1003) translate(214 52) translate(56)">
+                            <use fill="#2F3043" fill-rule="nonzero" stroke="#F9F9F9" stroke-width="1.667" xlink:href="#nt1z769qna"/>
+                        </g>
+                        <g transform="translate(-477 -1054) translate(208 1003) translate(214 52) translate(56) translate(.833 .833)">
+                            <mask id="qpap9fwydc" fill="#fff">
+                                <use xlink:href="#lxrsuticgb"/>
+                            </mask>
+                            <use fill="#FFF" xlink:href="#lxrsuticgb"/>
+                            <g mask="url(#qpap9fwydc)">
+                                <g transform="scale(-1 1) rotate(15 -26.592 -90.295)">
+                                    <path fill="#B6D5FE" d="M-0.336 10.189L16.482 10.189 16.482 22.7 -0.336 22.7z" transform="rotate(-90.48 8.073 16.444)"/>
+                                    <path fill="#B6D5FE" d="M19.26 12.56l-1.313 7.479c-.205 1.138-1.247 1.93-2.398 1.825l-1.808-.175.167-1.701 1.807.174c.264.025.504-.158.55-.42l1.315-7.478c.025-.142-.01-.287-.096-.402-.086-.113-.216-.185-.357-.198l-2.393-.231.163-1.702 2.395.23c.615.06 1.178.374 1.552.866.374.493.526 1.119.42 1.728l-.003.005z" transform="rotate(-6 16.519 15.802)"/>
+                                    <path fill="#B6D5FE" fill-rule="nonzero" d="M2.146 24.853h12c.544 0 .984.44.984.983 0 .543-.44.983-.983.983h-12c-.543 0-.983-.44-.983-.983 0-.543.44-.983.982-.983z" transform="rotate(-.48 8.147 25.836)"/>
+                                    <path fill="#EE2737" fill-rule="nonzero" d="M8.725 9.057c-.432.112-.653-.826-.653-.826l-2.064.182-2.337.24-1.513 15.67 3.806.367 6.286.607 1.404-14.538s.716-4.203.007-4.271c-.709-.069-1.226.97-4.936 2.569z" transform="rotate(-6 8.066 15.89)"/>
+                                    <circle cx="11.084" cy="12.946" r="1" fill="#FFE65A" fill-rule="nonzero" transform="rotate(-6 11.084 12.946)"/>
+                                    <circle cx="9.621" cy="16.338" r="1" fill="#FFE65A" fill-rule="nonzero" transform="rotate(-6 9.62 16.338)"/>
+                                    <circle cx="12.022" cy="20.622" r="1" fill="#FFE65A" fill-rule="nonzero" transform="rotate(-6 12.022 20.622)"/>
+                                    <circle cx="9.184" cy="19.835" r="1" fill="#FFE65A" fill-rule="nonzero" transform="rotate(-6 9.184 19.835)"/>
+                                    <circle cx="5.185" cy="15.546" r="1" fill="#FFE65A" fill-rule="nonzero" transform="rotate(-6 5.185 15.546)"/>
+                                    <circle cx="7.007" cy="12.981" r="1" fill="#FFE65A" fill-rule="nonzero" transform="rotate(-6 7.007 12.981)"/>
+                                    <circle cx="5.068" cy="22.29" r="1" fill="#FFE65A" fill-rule="nonzero" transform="rotate(-6 5.068 22.29)"/>
+                                    <circle cx="5.171" cy=".795" r="1" fill="#F9E8D0" fill-rule="nonzero" transform="rotate(-6 5.171 .795)"/>
+                                    <circle cx="14.681" cy="3.075" r="1" fill="#F9E8D0" fill-rule="nonzero" transform="rotate(-6 14.681 3.075)"/>
+                                    <path fill="#F9E8D0" fill-rule="nonzero" d="M14.587 6.408c-.256-.236-.565-.41-.9-.504-.467-.132-.791-.556-.795-1.04-.008-.887-.54-1.684-1.356-2.031-.238-.099-.434-.276-.555-.503-.4-.754-1.144-1.264-1.991-1.364-.848-.1-1.69.224-2.253.866-.274.322-.707.46-1.117.358-.188-.05-.381-.077-.576-.08H4.91c-1.2.043-2.197.936-2.373 2.123-.047.372-.276.695-.611.862C.94 5.585.422 6.685.67 7.756s1.2 1.831 2.298 1.838c.215-.002.42.087.566.246.146.158.217.37.197.584-.036.358.216.68.572.73.174.021.348-.03.484-.139.136-.11.222-.27.238-.443L5.16 9.17c.025-.24.152-.46.35-.599.197-.14.446-.186.681-.129h.017c.416.088.7.473.661.896l-.312 3.24c.012.405.323.737.726.776.404.039.773-.228.862-.623l.268-2.786c.016-.173.11-.33.255-.426.145-.095.326-.12.491-.066.528.179 1.106.132 1.599-.127.236-.123.525-.068.698.134.535.604 1.359.866 2.144.68.785-.186 1.405-.79 1.611-1.57.207-.78-.033-1.61-.623-2.16v-.002z" transform="rotate(-6 7.946 7.153)"/>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

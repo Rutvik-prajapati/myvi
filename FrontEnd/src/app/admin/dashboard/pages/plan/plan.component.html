@@ -1,0 +1,83 @@
+<button class="btn btn-primary" routerLink="add-plan">Add new plan</button>
+
+
+<table class="table table-striped table-sm" cellspacing="0" width="100%" id="dtBasicExample">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Price</th>
+        <th scope="col">Call</th>
+        <th scope="col">Data</th>
+        <th scope="col">Details</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let plan of plans;let i=index">
+        <th scope="row">{{plan.id}}</th>
+        <td>{{plan.price}}</td>
+
+        <td *ngIf="plan.call != null">{{plan.call}}</td>
+        <td *ngIf="plan.call == null">-</td>
+
+        <td *ngIf="plan.data != null">{{plan.data}}</td>
+        <td *ngIf="plan.data == null">-</td>
+        
+        <td><button class="btn btn-success bi bi-eye" (click)="planDetails(plan.id)" data-bs-toggle="modal" data-bs-target="#pack-detail"></button></td>
+        <td><button class="btn btn-primary bi bi-pen"></button></td>
+        <td><button class="btn btn-danger bi bi-trash"></button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Modal -->
+  <div class="modal left fade" *ngIf="planDetail != null" id="pack-detail" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Pack Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <table class="table position-relative">
+                <thead>
+                  <tr>
+                    <th class="greyColor">Price</th>
+                    <th class="addBold">₹ <span id="packDetailAmount" class="packAmount">{{planDetail.price}}</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngIf="planDetail.call != null">
+                    <td>calls</td>
+                    <td id="packDetailCalls"> {{planDetail.call}} <br> (to all networks)</td>
+                  </tr>
+                  <tr *ngIf="planDetail.talktime>0">
+                    <td>talktime</td>
+                    <td id="packDetailDetailsCalls"> {{planDetail.talktime}} (to all networks)</td>
+                  </tr>
+                  <tr *ngIf="planDetail.data != null">
+                    <td>data</td>
+                    <td id="packDetailData" class="addBold">{{planDetail.data}}</td>
+                  </tr>
+                  <tr *ngIf="planDetail.sms != null">
+                    <td>sms</td>
+                    <td id="packDetailSms" class="addBold">{{planDetail.sms}}</td>
+                  </tr>        
+                  <tr *ngIf="planDetail.validity > 0">
+                    <td>validity</td>
+                    <td class="validityDay"><span class="addBold" id="ucspackDetailValidity"><img src="../../../assets/img/onlinerecharge/calendar.svg">{{planDetail.validity}} Days</span></td>
+                  </tr>
+                  <tr *ngIf="planDetail.benefits != null">
+                    <td>benefits</td>
+                    <td class="validityDay"><span class="addBold" id="packDetailValidity"></span>{{planDetail.benefits}}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="text-center px-5">
+                <a type="button" class="btn btn-primary"  data-bs-dismiss="modal">Edit</a>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,42 @@
+<app-header></app-header>
+<app-navbar></app-navbar>
+<div class="container">
+    <p class="planType pt-5"> selected pack </p>
+    <div class="tab-pane fade show active" id="selected-plan" role="tabpanel" aria-labelledby="unlimited-tab">
+        <div class="card border-dark m-3"> 
+            <div class="card-body d-flex  justify-content-around"> 
+                <div class="planPrice text-center"> 
+                    <h5 class="card-title"> ₹{{planDetail.price}}</h5>
+                </div>
+                <div class="card-text row">
+                      <p class="col" *ngIf="planDetail.call != null">{{planDetail.call}}Call</p>
+                      <p class="col" *ngIf="planDetail.data != null">{{planDetail.data}} Data</p>
+                      <p class="col" *ngIf="planDetail.talktime > 0">{{planDetail.talktime}} Talktime</p>
+                      <p class="col" *ngIf="planDetail.validity > 0">{{planDetail.validity}} Validity</p>
+                      <p class="col" *ngIf="planDetail.sms != null">{{planDetail.sms}}</p>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+
+    <div class="container shadow row pt-3 mb-3">
+        <p class="planType">mobile number detail</p>
+        <form [formGroup]="confirmForm" (ngSubmit)="OnSubmit()" class="col-4">
+            <div id="confirm-data" >
+                <div class="form-group mb-3">
+                    <label for="phone">Mobile Number</label>
+                    <input formControlName="phoneNumber" placeholder="mobile number" type="text" class="form-control" id="phone">
+                    <span class="help-block" *ngIf="!confirmForm.get('phoneNumber').valid && confirmForm.get('phoneNumber').touched">
+                        <div class="vError" *ngIf="confirmForm.get('phoneNumber').errors['required']">This field is required</div>
+                        <div class="vError" *ngIf="confirmForm.get('phoneNumber').errors['pattern']">Mobile number should be valid</div>
+                    </span>
+                </div>
+            </div>
+        
+            <button type="submit" id="sendOtpBtn" (click)="newRecharge(planDetail.id,planDetail.price)" [disabled]="!confirmForm.valid"
+                class="btn rounded-pill bg-danger text-white sendotpBtn px-4 miDarkbtn py-2 mb-3">confirm</button>
+        </form>
+    </div>
+</div>
+<app-footer></app-footer>

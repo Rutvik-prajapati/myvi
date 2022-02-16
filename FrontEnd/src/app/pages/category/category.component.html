@@ -1,0 +1,114 @@
+<app-header></app-header>
+<app-navbar></app-navbar>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10">
+            <div class="orcEnterDiv">
+                <div class="orcHeading" *ngIf="type=='Prepaid'">
+                    <h1 class="heading-2">Best Prepaid Plans </h1>
+                    <h4>All Prepaid recharge plans for your mobile number</h4>
+                </div>
+                <div class="orcHeading" *ngIf="type=='Postpaid'">
+                  <h1 class="heading-2">Best Postpaid Plans </h1>
+                  <h4>All postpaid plans include :  Unlimited Calls  |  National Roaming  |  100 SMS per month</h4>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="sticky-topPlan">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation" *ngFor="let item of planTypeList">
+              <a class="nav-link px-4 py-3" id="unlimited-tab" [ngClass]="{active:planType=='item.name'}" (click)="GetPlans(item)" data-bs-toggle="tab" [attr.data-bs-target] = "item.name" type="button" role="tab" aria-controls="unlimited" aria-selected="true">{{item.name}}</a>
+            </li>
+        </ul>
+    </div>
+      <div class="tab-content" id="myTabContent">
+          <!-- <p class="px-3 pt-4" style="font-size: 16px;">{{planType}}</p> -->
+          <p class="planType pt-5"> {{planType}} </p>
+        <div  *ngFor="let plan of plans;">
+         <div class="pack-detail px-3 btn-leftsection">
+             <a href="#" (click)="planDetails(plan.id)" class="" data-bs-toggle="modal" data-bs-target="#pack-detail">pack detail</a>
+         </div>
+        <div class="tab-pane fade show active" id="{{planType}}" role="tabpanel" aria-labelledby="unlimited-tab">
+            <div class="card border-dark m-3"> 
+                <div class="card-body d-flex  justify-content-around"> 
+                    <div class="planPrice text-center"> 
+                        <h5 class="card-title"> ₹{{plan.price}}</h5>
+                    </div>
+                    <div class="card-text row">
+                          <p class="col" *ngIf="plan.call != null">{{plan.call}} Call</p>
+                          <p class="col" *ngIf="plan.data != null">{{plan.data}} Data</p>
+                          <p class="col" *ngIf="plan.talktime > 0">{{plan.talktime}} Talktime</p>
+                          <p class="col" *ngIf="plan.validity > 0">{{plan.validity}} Validity</p>
+                          <!-- <p class="col" *ngIf="plan.call != null">{{plan.sms}}</p> -->
+                          <!-- <p class="col-4">{{plan.benif}}</p> -->
+                    </div>
+                    <div class="buypack">
+                        <a [routerLink]="['mobileNo-conform',plan.id]" class="btn rounded-pill btn-danger text-center">buy pack</a>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+       <!-- Modal -->
+       <div class="modal left fade" *ngIf="planDetail != null" id="pack-detail" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Pack Details</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table position-relative">
+                    <thead>
+                      <tr>
+                        <th class="greyColor">Price</th>
+                        <th class="addBold">₹ <span id="packDetailAmount" class="packAmount">{{planDetail.price}}</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngIf="planDetail.call != null">
+                        <td>calls</td>
+                        <td id="packDetailCalls"> {{planDetail.call}} (to all networks)</td>
+                      </tr>
+                      <tr *ngIf="planDetail.talktime>0">
+                        <td>talktime</td>
+                        <td id="packDetailDetailsCalls"> {{planDetail.talktime}} (to all networks)</td>
+                      </tr>
+                      <tr *ngIf="planDetail.data != null">
+                        <td>data</td>
+                        <td id="packDetailData" class="addBold">{{planDetail.data}}</td>
+                      </tr>
+                      <tr *ngIf="planDetail.sms != null">
+                        <td>sms</td>
+                        <td id="packDetailSms" class="addBold">{{planDetail.sms}}</td>
+                      </tr>        
+                      <tr *ngIf="planDetail.validity > 0">
+                        <td>validity</td>
+                        <td class="validityDay"><span class="addBold" id="ucspackDetailValidity"><img src="../../../assets/img/onlinerecharge/calendar.svg">{{planDetail.validity}} Days</span></td>
+                      </tr>
+                      <tr *ngIf="planDetail.benefits != null">
+                        <td>benefits</td>
+                        <td class="validityDay"><span class="addBold" id="packDetailValidity"></span>{{planDetail.benefits}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="ordernowBtn text-center px-5">
+                    <a type="button"  data-bs-dismiss="modal" [routerLink]="['mobileNo-conform',planDetail.id]">recharge now</a>
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+</div>
+
+<app-footer></app-footer>

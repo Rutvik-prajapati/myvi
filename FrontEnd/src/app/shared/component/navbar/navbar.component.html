@@ -1,0 +1,123 @@
+
+<div class="vi_navbar container-fluid bg-white sticky-top">
+    <nav class="col-12 navbar py-0 navbar-expand-lg navbar-light container px-md-0">
+
+      <div class="col-md-6 col-lg-1">
+        <a class="navbar-brand" href="#"><img src="../../assets/img/homespyder/Vi-logo.svg" alt=""></a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav2"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse  col-lg-11" id="navbarNav2">
+        <div class="w-100">
+          <ul class="navbar-nav d-flex justify-content-end">
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Prepaid
+                <span class="sr-only">
+                  <img class="lazy loaded" src="../../assets/img/homespyder/navblackarrow.svg" data-ll-status="loaded">
+                </span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-white" aria-labelledby="navbarDarkDropdownMenuLink">
+                <li><a class="dropdown-item" routerLink="/home/prepaid">Online Recharge</a></li>
+                <li><a class="dropdown-item" routerLink="/home/prepaid">Prepaid Plans</a></li>
+                <li><a class="dropdown-item" href="#" (click)="navigatePrepaid()">Unlimited Packs</a></li>
+                <!-- <li><a class="dropdown-item" href="#">Recommended packs</a></li> -->
+                <li><a class="dropdown-item" (click)="navigatePrepaid()">TalkTime Packs</a></li>
+                <li><a class="dropdown-item" routerLink="home/prepaid">Data Packs</a></li>
+                <li><a class="dropdown-item" [routerLink]="['new-connection','prepaid']"> Prepaid SIM Online</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Postpaid
+                <span class="sr-only">
+                  <img class="lazy loaded" src="../../assets/img/homespyder/navblackarrow.svg" data-ll-status="loaded">
+                </span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-white" aria-labelledby="navbarDarkDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">Pay Bill Online</a></li>
+                <li><a class="dropdown-item" href="#">Postpaid SIM Online</a></li>
+                <li><a class="dropdown-item" href="#">Redx</a></li>
+                <li><a class="dropdown-item" href="#">Postpaid Plans for You</a></li>
+                <li><a class="dropdown-item" href="#">Postpaid Family Plans</a></li>
+                <li><a class="dropdown-item" href="#">eSIM Activation</a></li>
+                <li><a class="dropdown-item" href="#">Disney+ Hotstar offer</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                New Connection
+                <span class="sr-only">
+                  <img class="lazy loaded" src="../../assets/img/homespyder/navblackarrow.svg" data-ll-status="loaded">
+                </span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-white" aria-labelledby="navbarDarkDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">Postpaid Connection </a></li>
+                <li><a class="dropdown-item" href="#">Prepaid Connection </a></li>
+                <li><a class="dropdown-item" href="#">Port to ViTM</a></li>
+                <li><a class="dropdown-item" href="#">Free SIM Delivery</a></li>
+                <li><a class="dropdown-item" href="#">Track Your SIM Delivery</a></li>
+                <li><a class="dropdown-item" href="#">Broadband</a></li>
+                <li><a class="dropdown-item" href="#"> Fancy Number</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#">
+                International Roming
+                <!-- <span class="sr-only">
+                  <img class="lazy loaded" src="./assets/img/homespyder/navblackarrow.svg" data-ll-status="loaded">
+                </span> -->
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Explore
+                <span class="sr-only">
+                  <img class="lazy loaded" src="../../assets/img/homespyder/navblackarrow.svg" data-ll-status="loaded">
+                </span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-white" aria-labelledby="navbarDarkDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">Latest Smartphones</a></li>
+                <li><a class="dropdown-item" href="#">Smartphones on EMI</a></li>
+                <li><a class="dropdown-item" href="#">Vi™ movies & TV</a></li>
+                <li><a class="dropdown-item" href="#"> Unlock a better tomorrow with Vi</a></li>
+                <li><a class="dropdown-item" href="#">Callertune</a></li>
+                <li><a class="dropdown-item" href="#">GIGAnet</a></li>
+                <li><a class="dropdown-item" href="#">Postpaid Packs</a></li>
+                <li><a class="dropdown-item" href="#"> Vi™ Services</a></li>
+                <li><a class="dropdown-item" href="#">Vi WiFi Calling</a></li>
+                <li><a class="dropdown-item" href="#">Vi Hospicare Insurance</a></li>
+                <li><a class="dropdown-item" href="#">Cashback Offer</a></li>
+                <li><a class="dropdown-item" href="#">Vi™ Hero Unlimited</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Help
+                <span class="sr-only">
+                  <img class="lazy loaded" src="../../assets/img/homespyder/navblackarrow.svg" data-ll-status="loaded">
+                </span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-white" aria-labelledby="navbarDarkDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">FAQ</a></li>
+                <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                <li><a class="dropdown-item" href="#">Track Requests</a></li>
+                <li><a class="dropdown-item" href="#">Store Locator</a></li>
+              </ul>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+    </nav>
+  </div>

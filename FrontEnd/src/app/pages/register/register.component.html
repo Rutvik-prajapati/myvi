@@ -1,0 +1,61 @@
+<app-header></app-header>
+<app-navbar></app-navbar>
+<!-- <div class="col-md-12"> -->
+    <div class="row">
+        <div class="col-md-6">
+            <img src="../../assets/img/signInImg/mainImg.png" alt="">
+        </div>
+        <div class="col-md-6">
+            <div class="loginform">
+                <h1 class="loginheading">sign up to Vi</h1>
+                <div class="enterMobileSection">
+                    <form [formGroup]="registerForm" (ngSubmit)="OnSubmit()">
+                        <div id="register-data" formGroupName="registerData" >
+                            <div class="form-group mb-3">
+                                <label for="username">Username</label>
+                                <input formControlName="userName" placeholder="username" type="text" class="form-control" id="username">
+                                
+                                <span class="help-block" *ngIf="!registerForm.get('registerData.userName').valid && registerForm.get('registerData.userName').touched">
+                                    <div class="vError" *ngIf="registerForm.get('registerData.userName').errors['minlength']">Please enter minimum 3 character</div>
+                                    <div class="vError" *ngIf="registerForm.get('registerData.userName').errors['required']">This field is required</div>
+                                    <div class="vError" *ngIf="registerForm.get('registerData.userName').errors['pattern']">Username is not valid</div>
+                                </span>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="password">Password</label>
+                                <input formControlName="password" placeholder="password" type="password" class="form-control" id="password">
+                                <span class="help-block" *ngIf="!registerForm.get('registerData.password').valid && registerForm.get('registerData.password').touched">
+                                    <div class="vError" *ngIf="registerForm.get('registerData.password').errors['minlength']">Please enter minimum 8 character</div>
+                                    <div class="vError" *ngIf="registerForm.get('registerData.password').errors['required']">This field is required</div>
+                                    <div class="vError" *ngIf="registerForm.get('registerData.password').errors['pattern']">Password should be strong</div>
+                                </span>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="email">Email</label>
+                                <input formControlName="email" placeholder="email" type="email" class="form-control" id="email">
+                                <span class="help-block" *ngIf="!registerForm.get('registerData.email').valid && registerForm.get('registerData.email').touched">
+                                    <div class="vError" *ngIf="registerForm.get('registerData.email').errors['required']">This field is required</div>
+                                    <div class="vError" *ngIf="registerForm.get('registerData.email').errors['email']">Email is not valid</div>
+                                </span>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="phone">Mobile Number</label>
+                                <input formControlName="phoneNumber" placeholder="mobile number" type="text" class="form-control" id="phone">
+                                <span class="help-block" *ngIf="!registerForm.get('registerData.phoneNumber').valid && registerForm.get('registerData.phoneNumber').touched">
+                                    <div class="vError" *ngIf="registerForm.get('registerData.phoneNumber').errors['required']">This field is required</div>
+                                    <div class="vError" *ngIf="registerForm.get('registerData.phoneNumber').errors['pattern']">Mobile number should be valid</div>
+                                </span>
+                            </div>
+                        </div>
+                       
+                        <button type="submit" id="sendOtpBtn" [disabled]="!registerForm.valid"
+                    class="btn rounded-pill bg-secondary text-white sendotpBtn px-4 miDarkbtn">Sign up</button>
+
+                    </form>
+                    <p class="vError" style="display:block!important;" id="errorMsg">{{errorMessage}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- </div> -->
+<app-footer></app-footer>

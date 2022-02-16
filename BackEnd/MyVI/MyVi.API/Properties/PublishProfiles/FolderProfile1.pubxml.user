@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>E:\Radix\SQLTraining\Training-Aug-21\PROJECT\Rutvik Prajapati\BackEnd\MyVI\MyVi.API\bin\Release\netcoreapp3.1\publish\</_PublishTargetUrl>
+    <History>True|2022-02-13T06:41:56.1790596Z;</History>
+  </PropertyGroup>
+</Project>

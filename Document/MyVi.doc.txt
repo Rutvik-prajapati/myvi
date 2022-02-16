@@ -1,0 +1,25 @@
+MyVI
+Objective:
+* Users can online recharge their VI(Vodafone,Idea) sim card.
+* Buy a new VI sim card online and order it.
+
+
+Website Role:
+* Users(public,Administrator) 
+
+Admin:
+* Register
+* Login
+* Plan Type manage like.. Prepaid plan, Postpaid plan etc.. 
+* Recharge Plan Create,Update,Delete
+* VIP number Create,Update,Delete
+* Manage User Orders
+        
+User:
+* Register
+* Login
+* Recharge Their mobile number
+* Get all Plans(able to see all recharge plan)
+* Buy new sim card(able to order)
+* Other Company SIM Port into VI
+* Choose VIP number (order it)

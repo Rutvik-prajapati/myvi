@@ -1,0 +1,282 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+@font-face {
+    font-family: "Vi-Bold";
+    src: url("./assets/font/vodaphonefont/Vi-Bold.ttf");
+    font-style: normal;
+    font-weight: 100;
+}
+@font-face {
+    font-family: "Vi-Heavy";
+    src: url("./assets/font/vodaphonefont/Vi-Heavy.ttf");
+    font-style: normal;
+    font-weight: 100;
+}
+@font-face {
+    font-family: "Vi-Medium";
+    src: url("./assets/font/vodaphonefont/Vi-Medium.ttf");
+    font-style: normal;
+    font-weight: 100;
+}
+@font-face {
+    font-family: "Vi-Regular";
+    src: url("./assets/font/vodaphonefont/Vi-Regular.ttf");
+    font-style: normal;
+    font-weight: 600;
+}
+
+body{
+    font-family: 'Vi-Regular',"Helvetica","Arial",sans-serif;
+    color: #2f3043;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.bg-light {
+    background-color: rgba(202,222,248,15%) !important;
+}
+
+/* .navbar {
+    padding-top: 0; 
+    padding-bottom: 0;
+} */
+
+.nav-link {
+    padding : 0 ;
+}
+.vi_head{
+    font-family: "Vi-Heavy";
+    font-size: 36px;
+    line-height: 38px;
+    margin: 93px 0 0 0;
+}
+
+.quick_rechargeheading{
+    font-family: 'Vi-Heavy';
+    font-weight: 900;
+    line-height: 1.06;
+    text-align: center;
+    color: #2f3043;
+    margin: 0 0 40px;
+    font-size: 36px;
+}
+
+#recharge_btn{
+    height: 50px;
+    width: 100px;
+}
+
+#vi_mobileNo{
+    padding: 0 16px 0 30px;
+    border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+    box-shadow: none;
+}
+
+p.nonvilink{
+    color: #2f3043;
+    font-size: 16px;
+    line-height: 20px;
+    font-family: 'Vi-Regular',"Helvetica","Arial",sans-serif;
+    margin-top: 20px;
+}
+
+/* .img_wrapper{
+    width: 20%;
+} */
+/* .quicklinktext{
+
+} */
+
+.card-title{
+    font-family: 'Vi-Heavy';
+}
+.card-body-containt p:first-child{
+    font-family: 'Vi-Bold';
+    font-size: 18px;
+    font-weight: bold;
+    line-height: .89;
+    color: #2f3043;
+    margin: 0 0 10px;
+}
+
+.btn-rightsection button{
+    min-width: 115px;
+    height: 40px;
+    font-family: 'Vi-Medium';
+    font-weight: 500;
+    line-height: 1.33;
+    text-align: center;
+    color: #fff;
+    background-color: #ee2737;
+    border-radius: 50px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.btn-leftsection a{
+    font-family: 'Vi-Bold';
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.14;
+    color: #2f3044;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.browseall_btnsection button{
+    min-width: 150px;
+    height: 50px;
+    /* border-radius: 25px; */
+    border: solid 1px #2f3043;
+    background-color: #fff;
+    font-family: 'Vi-Medium';
+    font-size: 16px;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+    color: #2f3043;
+}
+
+.vi_simdsection h2.vi_simdhead {
+    font-size: 36px;
+    font-family: "Vi-Heavy","Helvetica","Arial",sans-serif;
+    line-height: 46px;
+    color: #2f3043;
+    margin-bottom: 10px;
+}
+
+.vi_simdsection p.vi_simddesc {
+    font-size: 24px;
+    font-family: "ViMedium","Helvetica","Arial",sans-serif;
+    line-height: 26px;
+    color: #ee2737;
+    margin-bottom: 0;
+}
+
+.ordernowBtn a {
+    color: #fff;
+    height: 50px;
+    width: 150px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Vi-Medium","Helvetica","Arial",sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    background-color: #ee2737;
+}
+
+.ordernowBtn {
+    margin-top: 40px;
+}
+
+.navbar-collapse{
+    justify-content: flex-end;
+}
+
+/* login form */
+
+.loginheading {
+    font-size: 36px;
+    line-height: 38px;
+    font-family: "Vi-Bold","Helvetica","Arial",sans-serif;
+    margin-bottom: 14px;
+}
+
+.loginSubheading {
+    font-size: 24px;
+    line-height: 38px;
+    margin-bottom: 40px;
+    font-family: "Vi-Regular","Helvetica","Arial",sans-serif;
+}
+
+.enterMobileSection {
+    position: relative;
+    margin-bottom: 30px;
+    width: 382px;
+}
+
+.px-1 {
+    padding-right: .20rem!important;
+}
+/* .btn{
+    background: #d5d6d9 !important;
+    border-color: #d5d6d9 !important;
+    color: #fff;
+    opacity: 1;
+} */
+
+/* form validation  */
+/* input.ng-invalid.ng-touched{
+    border: 1px solid red;
+    color: red;
+} */
+
+.vError {
+    color: red;
+}
+
+
+
+.modal.left .modal-dialog {
+	position:fixed;
+	right: 0;
+	margin: auto;
+	width: 350px;
+	height: 100%;
+	-webkit-transform: translate3d(0%, 0, 0);
+	-ms-transform: translate3d(0%, 0, 0);
+	-o-transform: translate3d(0%, 0, 0);
+	transform: translate3d(0%, 0, 0);
+}
+
+/* pack details model */
+.modal.left .modal-content {
+	height: 100%;
+	overflow-y: auto;
+}
+
+.modal.right .modal-body {
+	padding: 15px 15px 80px;
+}
+
+.modal.right.fade .modal-dialog {
+	left: -320px;
+	-webkit-transition: opacity 0.3s linear, left 0.3s ease-out;
+	-moz-transition: opacity 0.3s linear, left 0.3s ease-out;
+	-o-transition: opacity 0.3s linear, left 0.3s ease-out;
+	transition: opacity 0.3s linear, left 0.3s ease-out;
+}
+
+.modal.right.fade.show .modal-dialog {
+	right: 0;
+}
+
+/* ----- MODAL STYLE ----- */
+.modal-content {
+	border-radius: 0;
+	border: none;
+}
+
+.modal-header {
+	border-bottom-color: #eeeeee;
+	background-color: #fafafa;
+}
+
+.pack-detail, .pack-detail a{
+    color: #2f3044;
+   text-align: right;
+}
+
+.planType{
+    font-family: 'Vi-Bold';
+    font-weight: bold;
+    line-height: 1.14;
+    color: #2f3044;
+}

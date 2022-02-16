@@ -1,0 +1,21 @@
+.card-title {
+    margin: 0;
+    font-size: 40px;
+    top: 0;
+    /*  "line-height": "56px", */
+    color:#fff;
+    }
+.planPrice{
+   background-color: #2f3043;
+   padding:0;
+   margin:0;
+}
+.card-body{background-color: #2f3043}
+.card-text{color: #fff}
+
+.head{
+    font-size: 20px;
+    line-height: 26px;
+    color: #2f3043;
+    font-family: "Vi-Bold";
+}

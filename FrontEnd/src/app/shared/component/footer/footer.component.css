@@ -1,0 +1,58 @@
+.footerVodafone,.footerVodafone .card {
+    background-color: #fdf8f0;
+}
+
+.card{
+    border: 0;
+}
+
+#connectWithUS p {
+    font-family: "Vi-Bold","Helvetica","Arial",sans-serif;
+    color: #2f3043;
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 6px;
+}
+p{
+    margin-top: 0;
+}
+*{
+    box-sizing: border-box;
+}
+/* p.history {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+} */
+
+.footerVodafone .footer {
+    padding-top: 70px;
+}
+
+.footerVodafone .footer #connectWithUS p.history {
+    font-family: 'Vi-Medium',"Helvetica","Arial",sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0;
+    color: #2f3043;
+    margin-bottom: 24px;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+h2{
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.footerVodafone .footer dd {
+    margin-bottom: 0;
+}
+h5 {
+    font-family: "Vi-Heavy","Helvetica","Arial",sans-serif;
+    font-size: 18px;
+    line-height: 22px;
+}

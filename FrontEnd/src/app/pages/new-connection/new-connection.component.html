@@ -1,0 +1,247 @@
+<app-header></app-header>
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-5">
+            <div class="orcEnterDiv">
+                <div class="orcHeading">
+                    <h1 class="quick_rechargeheading" *ngIf="planType == 'prepaid' || planType == 'postpaid'">
+                      get a new {{planType}} SIM delivered in 3 simple steps
+                    </h1>
+                    <h1 class="quick_rechargeheading" *ngIf="planType == 'vip'">
+                      choose your free {{planType | uppercase}} fancy mobile number
+                    </h1>
+                    <h1 class="quick_rechargeheading" *ngIf="planType == 'port'">
+                      {{planType | titlecase}} Number to Vi - MNP
+                    </h1>
+                </div>
+            </div>
+            
+            <div class="row planType">
+              <div class="col-4">
+                <img  src="../../../assets/img/neogold/selectPlan.svg" alt=""><br>
+                <p class="pt-2">Select a pack</p>
+              </div> 
+              
+              <div class="col-4">
+                <img *ngIf="planType == 'prepaid' || planType == 'postpaid' || planType == 'vip'" src="../../../assets/img/neogold/choose-number.svg" alt="">
+                <img *ngIf="planType == 'port'" src="../../../assets/img/neogold/port-mobile-number.svg" alt=""><br>
+                <p class="pt-2" *ngIf="planType == 'prepaid' || planType == 'postpaid'">
+                  Choose your number
+                </p>
+                <p class="pt-2" *ngIf="planType == 'vip'">
+                  Select a fancy number
+                </p>
+                <p class="pt-2" *ngIf="planType == 'port'">
+                  Enter porting number
+                </p>
+              </div>
+          
+              <div class="col-4">
+                <img src="../../../assets/img/neogold/simdelivery-scooter.svg" alt=""><br>
+                <p class="pt-2">{{planType |  titlecase }} SIM delivery confirmed</p>
+              </div>
+            </div>
+        </div>
+        
+        <div class="col-12 col-md-5">
+            <div class="location-changer location row">
+                <div class="circleMain">
+                    <!-- <img src="/content/dam/vodafoneideadigital/nontelco/images/location.svg" class="circleImg" alt="image">
+                    <div class="circleContent">
+                        <p>Recharge Packs for  <span class="selected-circle">Gujarat.</span></p><p>circle <a class="change-circle miOrangeLink" data-toggle="modal" data-target="#circleSelection" onclick="utag.link({'Custom_Links' : 'Prepaid: All Packs: Change Circle'})"> Change</a></p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="sticky-topPlan">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link px-4 py-3" [ngClass]="{active:planType=='postpaid'}" id="postpaid-tab" (click)="onClick('postpaid')" data-bs-toggle="tab" data-bs-target="#postpaid" type="button" role="tab" aria-controls="postpaid" aria-selected="true">postpaid plans</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link px-4 py-3" [ngClass]="{active:planType=='prepaid' || planType=='vip' || planType=='port'}" id="prepaid-tab" (click)="onClick('prepaid')" data-bs-toggle="tab" data-bs-target="#prepaid" type="button" role="tab" aria-controls="prepaid" aria-selected="false">prepaid packs</a>
+            </li>
+        </ul>
+    </div>
+      <div class="tab-content" id="myTabContent">
+          <p class="planType mt-5" id="r">select a pack to start</p>
+        <!-- <div  *ngFor="let plan of plans;"> -->
+         <!-- <div class="pack-detail px-3 btn-leftsection">
+             <a href="#" (click)="planDetails(plan.id)" class="" data-bs-toggle="modal" data-bs-target="#pack-detail">pack detail</a>
+         </div> -->
+        <div class="tab-pane fade show active mt-5" id="{{planType}}" role="tabpanel" aria-labelledby="postpaid-tab">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col"  *ngFor="let plan of plans;let i=index">
+                  <div class="card h-100" style="background-color: #fcf4e8;">
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                      <!-- <h3 class="card-title ">₹501</h3> -->
+                      <div class="card-title d-flex flex-row justify-content-between mb-5">
+                        <div class="">
+                          <h3 class="">₹{{plan.price}}</h3>
+                        </div>
+                        <div class="d-flex flex-row flex-row-reverse">
+                          <img class="" src="../../../assets/img/quick-recharge/binge-allnight-desk.svg" alt="image1">
+                          <img class="" src="../../../assets/img/quick-recharge/weekend-datarollover.svg" alt="image2">
+                          <img class="" src="../../../assets/img/StaticPages/Hotstar/1disney-desktop.svg" alt="image3">
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <div class="d-flex flex-row justify-content-between mb-5">
+                          <div class="card-body-containt">
+                            <p>{{plan.call}}</p>
+                            <p>Calls</p>
+                          </div>
+                          <div class="card-body-containt">
+                            <p>{{plan.data}}</p>
+                            <p>Data</p>
+                          </div>
+                          <div class="card-body-containt">
+                            <p>{{plan.validity}}</p>
+                            <p>Validity</p>
+                          </div>
+                        </div>
+                        <div class="btn-section d-flex flex-row justify-content-between">
+                          <div class="btn-leftsection">
+                            <a href="#" (click)="planDetails(plan.id)" class="" data-bs-toggle="modal" data-bs-target="#pack-detail">pack details</a>
+                          </div>
+                          <div class="btn-rightsection">
+                            <button *ngIf="planType == 'prepaid' || planType == 'postpaid'" [routerLink]="[plan.id,'user-detail']" class="rounded-pill">Select</button>
+                            <button *ngIf="planType == 'vip' || planType == 'port'" [routerLink]="[temp,plan.id,'user-detail']" class="rounded-pill">Select</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>     
+
+    <!-- Modal -->
+    <div class="modal left fade" *ngIf="planDetail != null" id="pack-detail" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Pack Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <table class="table position-relative">
+                  <thead>
+                    <tr>
+                      <th class="greyColor">Price</th>
+                      <th class="addBold">₹ <span id="packDetailAmount" class="packAmount">{{planDetail.price}}</span></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngIf="planDetail.call != null">
+                      <td>calls</td>
+                      <td id="packDetailCalls"> {{planDetail.call}} (to all networks)</td>
+                    </tr>
+                    <tr *ngIf="planDetail.talktime>0">
+                      <td>talktime</td>
+                      <td id="packDetailDetailsCalls"> {{planDetail.talktime}} (to all networks)</td>
+                    </tr>
+                    <tr *ngIf="planDetail.data != null">
+                      <td>data</td>
+                      <td id="packDetailData" class="addBold">{{planDetail.data}}</td>
+                    </tr>
+                    <tr *ngIf="planDetail.sms != null">
+                      <td>sms</td>
+                      <td id="packDetailSms" class="addBold">{{planDetail.sms}}</td>
+                    </tr>        
+                    <tr *ngIf="planDetail.validity > 0">
+                      <td>validity</td>
+                      <td class="validityDay"><span class="addBold" id="ucspackDetailValidity"><img src="../../../assets/img/onlinerecharge/calendar.svg">{{planDetail.validity}} Days</span></td>
+                    </tr>
+                    <tr *ngIf="planDetail.benefits != null">
+                      <td>benefits</td>
+                      <td class="validityDay"><span class="addBold" id="packDetailValidity"></span>{{planDetail.benefits}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="ordernowBtn text-center px-5">
+                  <a type="button"  data-bs-dismiss="modal" [routerLink]="[planDetail.id,'user-detail']">Select</a>
+                </div>
+          </div>
+        </div>
+      </div>
+
+
+
+  </div>
+
+      
+    <!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col"  *ngFor="let plan of plans;let i=index">
+              <div class="card h-100" *ngIf="i<3" style="background-color: blueviolet;">
+              
+                <div class="card-body">
+              
+                  <div class="card-title d-flex flex-row justify-content-between mb-5">
+                    <div class="">
+                      <h3 class="">₹{{plan.price}}</h3>
+                    </div>
+                    <div class="d-flex flex-row flex-row-reverse">
+                      <img class="" src="../../../assets/img/quick-recharge/binge-allnight-desk.svg" alt="image1">
+                      <img class="" src="../../../assets/img/quick-recharge/weekend-datarollover.svg" alt="image2">
+                      <img class="" src="../../../assets/img/StaticPages/Hotstar/1disney-desktop.svg" alt="image3">
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="d-flex flex-row justify-content-between mb-5">
+                      <div class="card-body-containt">
+                        <p>{{plan.call}}</p>
+                        <p>Calls</p>
+                      </div>
+                      <div class="card-body-containt">
+                        <p>{{plan.data}}</p>
+                        <p>Data</p>
+                      </div>
+                      <div class="card-body-containt">
+                        <p>{{plan.validity}}</p>
+                        <p>Validity</p>
+                      </div>
+                    </div>
+                    <div class="btn-section d-flex flex-row justify-content-between">
+                      <div class="btn-leftsection">
+                        <a href="" class="">pack details</a>
+                      </div>
+                      <div class="btn-rightsection">
+                        <button class="rounded-pill">recharge now</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="../../../assets/img/StaticPages/Homepage/Bigboss_03_desk.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="../../../assets/img/StaticPages/Homepage/homepage-hero-ul-desktop.png" class="d-block w-100" alt="...">
+        </div>
+      </div> -->
+      <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button> -->
+    <!-- </div> -->
+    </div>
+
+<app-footer></app-footer>

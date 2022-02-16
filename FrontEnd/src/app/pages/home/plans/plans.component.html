@@ -1,0 +1,107 @@
+<div class="container">
+    <h2 class="quick_rechargeheading text-center">best seller unlimited packs</h2>
+    <!-- <button (click)="GetPlans()">GetPlans</button> -->
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col"  *ngFor="let plan of plans;let i=index">
+        <div class="card h-100 shadow-lg bg-body" *ngIf="i<3">
+          <!-- <img src="..." class="card-img-top" alt="..."> -->
+          <div class="card-body rounded-3">
+            <!-- <h3 class="card-title ">₹501</h3> -->
+            <div class="card-title d-flex flex-row justify-content-between mb-5">
+              <div class="">
+                <h3 class="">₹{{plan.price}}</h3>
+              </div>
+              <div class="d-flex flex-row flex-row-reverse">
+                <img class="" src="../../../assets/img/quick-recharge/binge-allnight-desk.svg" alt="image1">
+                <img class="" src="../../../assets/img/quick-recharge/weekend-datarollover.svg" alt="image2">
+                <img class="" src="../../../assets/img/StaticPages/Hotstar/1disney-desktop.svg" alt="image3">
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="d-flex flex-row justify-content-between mb-5">
+                <div class="card-body-containt">
+                  <p>{{plan.call | split:' ':0}} <br>{{plan.call | split:' ':1}}</p>
+                  <p>Calls</p>
+                </div>
+                <div class="card-body-containt">
+                  <p>{{plan.data}}</p>
+                  <p>Data</p>
+                </div>
+                <div class="card-body-containt">
+                  <p>{{plan.validity}}</p>
+                  <p>Validity</p>
+                </div>
+              </div>
+              <div class="btn-section d-flex flex-row justify-content-between">
+                <div class="btn-leftsection">
+                  <a href="#" (click)="planDetails(plan.id)" class="" data-bs-toggle="modal" data-bs-target="#pack-detail">pack details</a>
+                </div>
+                <div class="btn-rightsection">
+                  <button [routerLink]="['prepaid/mobileNo-conform',plan.id]" class="btn rounded-pill">recharge now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="browseall_btnsection text-center">
+      <a [routerLink]="['prepaid']" class="">
+        <button class="btn rounded-pill">browse all packs</button>
+      </a>
+    </div>
+
+     <!-- Modal -->
+     <div class="modal left fade" *ngIf="planDetail != null" id="pack-detail" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Pack Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <table class="table position-relative">
+                  <thead>
+                    <tr>
+                      <th class="greyColor">Price</th>
+                      <th class="addBold">₹ <span id="packDetailAmount" class="packAmount">{{planDetail.price}}</span></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngIf="planDetail.call != null">
+                      <td>calls</td>
+                      <td id="packDetailCalls"> {{planDetail.call}} (to all networks)</td>
+                    </tr>
+                    <tr *ngIf="planDetail.talktime>0">
+                      <td>talktime</td>
+                      <td id="packDetailDetailsCalls"> {{planDetail.talktime}} (to all networks)</td>
+                    </tr>
+                    <tr *ngIf="planDetail.data != null">
+                      <td>data</td>
+                      <td id="packDetailData" class="addBold">{{planDetail.data}}</td>
+                    </tr>
+                    <tr *ngIf="planDetail.sms != null">
+                      <td>sms</td>
+                      <td id="packDetailSms" class="addBold">{{planDetail.sms}}</td>
+                    </tr>        
+                    <tr *ngIf="planDetail.validity > 0">
+                      <td>validity</td>
+                      <td class="validityDay"><span class="addBold" id="ucspackDetailValidity"><img src="../../../assets/img/onlinerecharge/calendar.svg">{{planDetail.validity}} Days</span></td>
+                    </tr>
+                    <tr *ngIf="planDetail.benefits != null">
+                      <td>benefits</td>
+                      <td class="validityDay"><span class="addBold" id="packDetailValidity"></span>{{planDetail.benefits}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="ordernowBtn text-center px-5">
+                  <a type="button"  data-bs-dismiss="modal" [routerLink]="['mobileNo-conform',planDetail.id]">recharge now</a>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>

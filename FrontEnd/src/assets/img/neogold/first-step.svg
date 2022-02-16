@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g transform="translate(-999 -386) translate(999 386)">
+                <circle cx="25" cy="25" r="25" fill="#DFEBFB"/>
+                <g fill-rule="nonzero" transform="translate(8.824 13.235)">
+                    <rect width="11.171" height="16.683" y="2.93" fill="#FFC600" rx="1.603"/>
+                    <g fill="#FFF" opacity=".46" transform="translate(2.227 5.714)">
+                        <circle cx="3.359" cy="2.979" r="2.802"/>
+                    </g>
+                    <g fill="#FFF" opacity=".4" transform="translate(1.615 13.055)">
+                        <rect width="7.996" height="1" x=".08" y=".483" rx=".281"/>
+                        <rect width="6.13" height="1" x=".08" y="1.841" rx=".281"/>
+                        <rect width="3.438" height="1" x=".08" y="3.102" rx=".281"/>
+                    </g>
+                    <path fill="#FFC600" d="M5.952 7.8c.093.099.154.222.178.355h.416v.257H6.13c-.08.373-.42.632-.802.612h-.042l.82.905H5.67l-.801-.905v-.288h.416c.21.026.406-.115.446-.324h-.887V8.16h.912c-.04-.209-.236-.35-.447-.324h-.465v-.288h1.7v.257L5.953 7.8z"/>
+                    <rect width="11.171" height="16.683" x="22.244" y="3.31" fill="#FFC600" rx="1.603"/>
+                    <g fill="#FFF" opacity=".46" transform="translate(24.862 5.714)">
+                        <circle cx="2.967" cy="3.352" r="2.802"/>
+                    </g>
+                    <g fill="#FFF" opacity=".4" transform="translate(23.639 13.667)">
+                        <rect width="7.996" height="1" x=".3" y=".251" rx=".281"/>
+                        <rect width="6.13" height="1" x=".3" y="1.609" rx=".281"/>
+                        <rect width="3.438" height="1" x=".3" y="2.869" rx=".281"/>
+                    </g>
+                    <path fill="#FFC600" d="M28.196 8.16c.092.1.154.223.178.356h.422v.257h-.422c-.078.372-.416.632-.796.611h-.067l.82.906h-.41l-.832-.906v-.287h.471c.211.026.406-.115.447-.324h-.918v-.257h.918c-.04-.21-.236-.35-.447-.324h-.471v-.288h1.707v.257h-.6z"/>
+                    <rect width="15.6" height="23.296" x="9.072" fill="#EE2737" rx="1.603"/>
+                    <g fill="#FFF">
+                        <g opacity=".2" transform="translate(11.765 2.941)">
+                            <circle cx="5.095" cy="4.999" r="4.691"/>
+                        </g>
+                        <path d="M5.711 3.51c.156.163.259.37.294.594h.734v.426h-.734c-.12.63-.689 1.072-1.329 1.035H4.56l1.373 1.512h-.734L3.854 5.565V5.08h.786c.352.04.674-.201.734-.55h-1.52v-.426h1.534c-.063-.346-.384-.584-.734-.544h-.8v-.484H6.71v.433H5.71z" transform="translate(11.765 2.941)"/>
+                    </g>
+                    <rect width="11.165" height="1" x="11.44" y="14.811" fill="#FFF" opacity=".2" rx=".392"/>
+                    <rect width="8.559" height="1" x="11.44" y="16.713" fill="#FFF" opacity=".2" rx=".392"/>
+                    <rect width="4.802" height="1" x="11.44" y="18.475" fill="#FFF" opacity=".2" rx=".392"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

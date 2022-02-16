@@ -1,0 +1,80 @@
+<div class="container" style="width: 70%;">
+    <form [formGroup]="planForm">
+        <div id="plan-form">
+            <div class="form-group mb-3">
+                <label for="planType">Select PlanType</label>
+                <select class="form-select" aria-label="Default select example" name="select" id="" formControlName="planTypeId">
+                    <!-- <option selected>select</option> -->
+                    <option *ngFor="let item of planTypeList" value="{{item.id}}">{{item.name}}</option>
+                </select>
+                <span class="help-block" *ngIf="!planForm.get('planTypeId').valid && planForm.get('planTypeId').touched">
+                    <div class="vError" *ngIf="planForm.get('planTypeId').errors['required']">*select any planType</div>
+                </span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="price">Price</label>
+                <input formControlName="price" placeholder="price" type="text" class="form-control" id="price">
+                <span class="help-block" *ngIf="!planForm.get('price').valid && planForm.get('price').touched">
+                    <div class="vError" *ngIf="planForm.get('price').errors['minlength']">Please enter minimum 3 character</div>
+                    <div class="vError" *ngIf="planForm.get('price').errors['required']">*price required</div>
+                    <div class="vError" *ngIf="planForm.get('price').errors['pattern']">Price is not valid</div>
+                </span>
+            </div>
+            <div class="form-group mb-3">
+                <label for="call">Call</label>
+                <input formControlName="call" placeholder="call" type="text" class="form-control" id="call">
+                <span class="help-block" *ngIf="!planForm.get('call').valid && planForm.get('call').touched">
+                    <div class="vError" *ngIf="planForm.get('call').errors['minlength']">Please enter minimum 8 character</div>
+                    <div class="vError" *ngIf="planForm.get('call').errors['required']">*call is required</div>
+                    <div class="vError" *ngIf="planForm.get('call').errors['pattern']">Password should be strong</div>
+                </span>
+            </div>
+            <div class="form-group mb-3">
+                <label for="talktime">Talktime</label>
+                <input formControlName="talktime" placeholder="talktime" type="text" class="form-control" id="talktime">
+                <span class="help-block" *ngIf="!planForm.get('talktime').valid && planForm.get('talktime').touched">
+                    <div class="vError" *ngIf="planForm.get('talktime').errors['minlength']">Please enter minimum 8 character</div>
+                    <div class="vError" *ngIf="planForm.get('talktime').errors['required']">*talktime is required</div>
+                    <div class="vError" *ngIf="planForm.get('talktime').errors['pattern']">Password should be strong</div>
+                </span>
+            </div>
+            <div class="form-group mb-3">
+                <label for="data">Data</label>
+                <input formControlName="data" placeholder="data" type="text" class="form-control" id="data">
+                <span class="help-block" *ngIf="!planForm.get('data').valid && planForm.get('data').touched">
+                    <div class="vError" *ngIf="planForm.get('data').errors['required']">*data required</div>
+                    <div class="vError" *ngIf="planForm.get('data').errors['email']">Email is not valid</div>
+                </span>
+            </div>
+            <div class="form-group mb-3">
+                <label for="sms">SMS</label>
+                <input formControlName="sms" placeholder="sms" type="text" class="form-control" id="sms">
+                <span class="help-block" *ngIf="!planForm.get('sms').valid && planForm.get('sms').touched">
+                    <div class="vError" *ngIf="planForm.get('sms').errors['required']">*sms is required</div>
+                    <div class="vError" *ngIf="planForm.get('sms').errors['pattern']">Mobile number should be valid</div>
+                </span>
+            </div>
+            <div class="form-group mb-3">
+                <label for="validity">Validity</label>
+                <input formControlName="validity" placeholder="validity" type="text" class="form-control" id="validity">
+                <span class="help-block" *ngIf="!planForm.get('validity').valid && planForm.get('validity').touched">
+                    <div class="vError" *ngIf="planForm.get('validity').errors['required']">*validity is required</div>
+                    <div class="vError" *ngIf="planForm.get('validity').errors['pattern']">Mobile number should be valid</div>
+                </span>
+            </div>
+            <div class="form-group mb-3">
+                <label for="benefits">Benefits</label>
+                <input formControlName="benefits" placeholder="benefits" type="text" class="form-control" id="benefits">
+                <span class="help-block" *ngIf="!planForm.get('benefits').valid && planForm.get('benefits').touched">
+                    <div class="vError" *ngIf="planForm.get('benefits').errors['required']">*benefits is required</div>
+                    <div class="vError" *ngIf="planForm.get('benefits').errors['pattern']">Mobile number should be valid</div>
+                </span>
+            </div>
+        </div>
+    
+        <button type="submit" id="sendOtpBtn"
+        class="btn btn-primary">Add</button>
+
+    </form>
+</div>
